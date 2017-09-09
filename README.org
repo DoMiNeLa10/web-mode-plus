@@ -1,0 +1,35 @@
+#+TITLE: web-mode-plus — a set of additional commands for web-mode
+#+LANGUAGE: en
+
+~web-mode-plus~ defines additional commands for ~web-mode~ that weren't merged
+to it.
+
+It provides following features:
+- following links in HTML files (=C-c C-o= in default bindings)
+- creating new tags of the same type like the =M-RET= command in ~org-mode~
+  (=M-RET= in default bindings)
+- a shortcut to insert a ~<br/>~ tag at point (or on every line in region)
+  (=C-c C-RET= in default bindings)
+
+* Installation
+This set of extensions depends on [[https://github.com/fxbois/web-mode/][~web-mode~]]. Make sure it's installed and set
+up first.
+
+1. Put =web-mode-plus.el= somewhere in your ~load-path~.
+2. ~require~ it in your init file
+
+   #+BEGIN_SRC elisp
+   (require 'web-mode-plus)
+   #+END_SRC
+3. Add an ~eval-after-load~ form that sets it up.
+
+   #+BEGIN_SRC elisp
+     (eval-after-load 'web-mode
+       (lambda ()
+         (web-mode-plus-bind-keys)           ; add default bindings
+         (web-mode-plus-set-html-snippets))) ; add a set of better HTML snippets
+   #+END_SRC
+
+Autoload comments are added for ~web-mode-plus-bind-keys~ and
+~web-mode-plus-set-html-snippets~, so these functions can be used easily with
+lazy loading setups.
