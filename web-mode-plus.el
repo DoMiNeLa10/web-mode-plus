@@ -1,6 +1,6 @@
 ;;; web-mode-plus.el --- additional editing comamnds for web-mode
 
-;; Copyright (C) 2017 DoMiNeLa10
+;; Copyright (C) 2017, 2020 UwUnyaa
 
 ;; Package-Requires: (web-mode)
 
